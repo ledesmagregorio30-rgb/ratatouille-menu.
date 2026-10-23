@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menú Ágil del Bistro Ratatouille · Instituto N.º 182</title>
+  <meta name="description" content="Menú Ágil del Bistro Ratatouille - Tecnicatura en Análisis de Sistemas, Instituto N.º 182 Sargento Cabral.">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo/styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="Menú Ágil del Bistro Ratatouille">
+      <img src="img/isotipo.png" onerror="this.onerror=null; this.src='img/isotipo.png.png';" alt="Logo Ratatouille" width="48" height="48">
+      <span><b>Ratatouille</b><small>BISTRO &amp; COFFEE</small></span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#carta">Carta</a>
+      <a href="#contacto">Ubicación</a>
+      <a href="#musica">En vivo</a>
+      <a href="#reservas">Reservas</a>
+      <a href="#despacho">Repartidores</a>
+    </nav>
+    <a class="btn" href="#pedido">Mi pedido (<span id="cant">0</span>)</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- Portada con Nombre Oficial del TP y Estilo del Informe -->
+  <section class="portada">
+    <div class="wrap">
+      <div class="marco">
+        <div class="instituto-tag">Instituto N.º 182 «Sargento Cabral»</div>
+        <img src="img/logo.png" onerror="this.onerror=null; this.src='img/logo.png.png';" alt="Ratatouille Bistro &amp; Coffee" width="380">
+        <p class="mesa" id="mesa"></p>
+        <h1 class="subtitulo-proyecto">Menú Ágil del Bistro Ratatouille</h1>
+        <div class="regla" aria-hidden="true"><i>❖</i></div>
+        <p>Cocina casera, café de especialidad y buena mesa.</p>
+        <p><strong>ESCANEÁ Y PEDÍ DESDE TU MESA</strong></p>
+        <div class="acciones" style="margin-top: 1rem;">
+          <a class="btn" href="#carta">Hacer un pedido</a>
+          <a class="btn sec" href="#reservas">Reservar mesa</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section class="servicios" aria-label="Servicios">
+    <div class="wrap">
+      <ul>
+        <li><h3>Entradas</h3><p>Tostados, empanadas y opciones para compartir.</p></li>
+        <li><h3>Principales</h3><p>Pastas caseras, carnes y el ratatouille de la casa.</p></li>
+        <li><h3>Postres</h3><p>Pastelería artesanal y dulzuras del día.</p></li>
+        <li><h3>Bebidas</h3><p>Café de especialidad, té, jugos y limonadas.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Menú / Carta -->
+  <section class="carta" id="carta">
+    <div class="wrap">
+      <h2>Nuestra carta</h2>
+      <p>Elegí la categoría, mirá las fotos de nuestros platos y confirmá tu pedido.</p>
+
+      <div class="tabs" role="tablist" aria-label="Categorías del menú">
+        <button role="tab" id="t-entradas" aria-selected="true" aria-controls="p-entradas" data-cat="entradas">Entradas</button>
+        <button role="tab" id="t-principales" aria-selected="false" aria-controls="p-principales" data-cat="principales">Principales</button>
+        <button role="tab" id="t-postres" aria-selected="false" aria-controls="p-postres" data-cat="postres">Postres</button>
+        <button role="tab" id="t-bebidas" aria-selected="false" aria-controls="p-bebidas" data-cat="bebidas">Bebidas</button>
+      </div>
+
+      <div class="grilla">
+        <div>
+
+          <!-- 01 ENTRADAS -->
+          <div class="platos" role="tabpanel" id="p-entradas" aria-labelledby="t-entradas">
+            <div class="cat-header">
+              <span class="cat-num">01</span>
+              <h3>Entradas</h3>
+              <span class="cat-desc">Opciones ligeras y para compartir.</span>
+            </div>
+            
+            <article class="plato">
+              <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=300&auto=format&fit=crop&q=80" alt="Tostado de jamón y queso" class="plato-img">
+              <h3>Tostado de jamón y queso</h3>
+              <p>Pan de miga tostado mantecoso y crujiente.</p>
+              <span class="precio">$8.500</span>
+              <button class="btn" data-nombre="Tostado de jamón y queso" data-precio="8500">Agregar</button>
+            </article>
+
+            <article class="plato">
+              <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=300&auto=format&fit=crop&q=80" alt="Tostada con palta y huevo" class="plato-img">
+              <h3>Tostada con palta y huevo</h3>
+              <p>Pan de campo, palta fresca, huevo poché y semillas.</p>
+              <span class="precio">$9.900</span>
+              <button class="btn" data-nombre="Tostada con palta y huevo" data-precio="9900">Agregar</button>
+            </article>
+
+            <article class="plato">
+              <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=300&auto=format&fit=crop&q=80" alt="Empanadas criollas" class="plato-img">
+              <h3>Empanadas de carne (2 un.)</h3>
+              <p>Masa casera cortada a cuchillo, fritas o al horno.</p>
+              <span class="precio">$6.200</span>
+              <button class="btn" data-nombre="Empanadas de carne" data-precio="6200">Agregar</button>
+            </article>
+
+            <div class="banner-qr">ESCANEÁ EL QR DE TU MESA Y PEDÍ DESDE EL CELULAR · Bon appétit</div>
+          </div>
+
+          <!-- 02 PRINCIPALES -->
+          <div class="platos" role="tabpanel" id="p-principales" aria-labelledby="t-principales" hidden>
+            <div class="cat-header">
+              <span class="cat-num">02</span>
+              <h3>Principales</h3>
+              <span class="cat-desc">Nuestras mejores especialidades de cocina.</span>
+            </div>
+
+            <article class="plato">
+              <img src="https://images.unsplash.com/photo-1572453800999-e8d2d1589b7c?w=300&auto=format&fit=crop&q=80" alt="Ratatouille de la casa" class="plato-img">
+              <h3>Ratatouille de la casa</h3>
+              <p>Berenjena, zucchini, tomate y morrón al horno con hierbas.</p>
+              <span class="precio">$11.900</span>
+              <button class="btn" data-nombre="Ratatouille de la casa" data-precio="11900">Agregar</button>
+            </article>
+
+            <article class="plato">
+              <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=300&auto=format&fit=crop&q=80" alt="Bife de chorizo" class="plato-img">
+              <h3>Bife de chorizo</h3>
+              <p>Con papas rústicas al romero y ensalada de estación.</p>
+              <span class="precio">$17.500</span>
+              <button class="btn" data-nombre="Bife de chorizo" data-precio="17500">Agregar</button>
+            </article>
+
+            <article class="plato">
+              <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=300&auto=format&fit=crop&q=80" alt="Ñoquis con salsa fresca" class="plato-img">
+              <h3>Ñoquis con salsa fresca</h3>
+              <p>Salsa de tomate casera, albahaca fresca y queso rallado.</p>
+              <span class="precio">$10.800</span>
+              <button class="btn" data-nombre="Ñoquis con salsa fresca" data-precio="10800">Agregar</button>
+            </article>
+
+            <article class="plato">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300&auto=format&fit=crop&q=80" alt="Hamburguesa de la casa" class="plato-img">
+              <h3>Hamburguesa de la casa</h3>
+              <p>Carne seleccionada, queso cheddar, panceta y papas fritas.</p>
+              <span class="precio">$12.900</span>
+              <button class="btn" data-nombre="Hamburguesa de la casa" data-precio="12900">Agregar</button>
+            </article>
+
+            <div class="banner-qr">ESCANEÁ EL QR DE TU MESA Y PEDÍ DESDE EL CELULAR · Bon appétit</div>
+          </div>
+
+          <!-- 03 POSTRES -->
+          <div class="platos" role="tabpanel" id="p-postres" aria-labelledby="t-postres" hidden>
+            <div class="cat-header">
+              <span class="cat-num">03</span>
+              <h3>Postres</h3>
+              <span class="cat-desc">Pastelería artesanal e indulgencias dulces.</span>
+            </div>
+
+            <article class="plato">
+              <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=300&auto=format&fit=crop&q=80" alt="Cheesecake de frutos rojos" class="plato-img">
+              <h3>Cheesecake de frutos rojos</h3>
+              <p>Suave crema de queso horneada con mermelada artesanal.</p>
+              <span class="precio">$6.900</span>
+              <button class="btn" data-nombre="Cheesecake de frutos rojos" data-precio="6900">Agregar</button>
+            </article>
+
+            <article class="plato">
+              <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=300&auto=format&fit=crop&q=80" alt="Panqueques con dulce de leche" class="plato-img">
+              <h3>Panqueques con dulce de leche</h3>
+              <p>Tres panqueques tibios repletos de dulce de leche y crema.</p>
+              <span class="precio">$8.800</span>
+              <button class="btn" data-nombre="Panqueques con dulce de leche" data-precio="8800">Agregar</button>
+            </article>
+
+            <article class="plato">
+              <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=300&auto=format&fit=crop&q=80" alt="Croissant de almendras" class="plato-img">
+              <h3>Croissant de almendras</h3>
+              <p>Hojaldre de manteca crujiente relleno con crema de almendras.</p>
+              <span class="precio">$5.400</span>
+              <button class="btn" data-nombre="Croissant de almendras" data-precio="5400">Agregar</button>
+            </article>
+
+            <div class="banner-qr">ESCANEÁ EL QR DE TU MESA Y PEDÍ DESDE EL CELULAR · Bon appétit</div>
+          </div>
+
+          <!-- 04 BEBIDAS -->
+          <div class="platos" role="tabpanel" id="p-bebidas" aria-labelledby="t-bebidas" hidden>
+            <div class="cat-header">
+              <span class="cat-num">04</span>
+              <h3>Bebidas</h3>
+              <span class="cat-desc">Café de especialidad y refrescos naturales.</span>
+            </div>
+
+            <article class="plato">
+              <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=300&auto=format&fit=crop&q=80" alt="Café de especialidad" class="plato-img">
+              <h3>Café Flat White / Cappuccino</h3><span class="precio">$4.800</span>
+              <p>Granos de especialidad con leche cremada al vapor.</p>
+              <button class="btn" data-nombre="Café de especialidad" data-precio="4800">Agregar</button>
+            </article>
+
+            <article class="plato">
+              <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=300&auto=format&fit=crop&q=80" alt="Limonada con menta y jengibre" class="plato-img">
+              <h3>Limonada con menta y jengibre</h3>
+              <p>Jarra individual exprimida al momento.</p>
+              <span class="precio">$4.500</span>
+              <button class="btn" data-nombre="Limonada con menta y jengibre" data-precio="4500">Agregar</button>
+            </article>
+
+            <article class="plato">
+              <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=300&auto=format&fit=crop&q=80" alt="Milkshake de chocolate" class="plato-img">
+              <h3>Milkshake artesanal</h3>
+              <p>Batido con helado de crema o chocolate y chantilly.</p>
+              <span class="precio">$5.800</span>
+              <button class="btn" data-nombre="Milkshake artesanal" data-precio="5800">Agregar</button>
+            </article>
+
+            <div class="banner-qr">ESCANEÁ EL QR DE TU MESA Y PEDÍ DESDE EL CELULAR · Bon appétit</div>
+          </div>
+
+        </div>
+
+        <!-- Carrito de Pedido -->
+        <aside class="pedido" id="pedido" aria-labelledby="h-pedido">
+          <h3 id="h-pedido">Tu pedido</h3>
+          <p class="vacio" id="vacio">Todavía no agregaste platos. Elegilos de la carta.</p>
+          <ul id="lista" aria-live="polite"></ul>
+          <div class="total"><span>Total</span><span id="total">$0</span></div>
+          <form id="f-pedido">
+            <label for="p-nombre">Nombre</label>
+            <input id="p-nombre" required autocomplete="given-name" placeholder="Tu nombre">
+            <label for="p-tipo">Tipo de pedido</label>
+            <select id="p-tipo">
+              <option>En la mesa</option>
+              <option>Para retirar</option>
+              <option>Delivery (PedidosYa / Rappi)</option>
+            </select>
+            <label for="p-notas">Aclaraciones</label>
+            <textarea id="p-notas" placeholder="Sin cebolla, alergias, etc."></textarea>
+            <button class="btn" type="submit">Confirmar pedido</button>
+            <p class="aviso" id="aviso" role="status"></p>
+          </form>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Ubicación & Horarios -->
+  <section class="contacto-sec" id="contacto">
+    <div class="wrap">
+      <h2>Ubicación &amp; Horarios</h2>
+      <p>Te esperamos para disfrutar de la mejor gastronomía y ambiente.</p>
+      
+      <div class="contacto-grid">
+        <div class="info-box">
+          <h3>Ratatouille Bistro &amp; Coffee</h3>
+          <p>📍 <strong>Dirección:</strong> Av. Corrientes 1234, CABA, Argentina</p>
+          <p>📞 <strong>Teléfono:</strong> +54 11 4321-8765</p>
+          <p>✉️ <strong>Email:</strong> contacto@ratatouille.com.ar</p>
+          <p>📱 <strong>Instagram:</strong> @ratatouille.bistro</p>
+
+          <h3 style="margin-top: 1.25rem;">Horarios de Atención</h3>
+          <ul class="horarios-list">
+            <li><span>Lunes a Viernes:</span> <strong>08:00 - 00:00 hs</strong></li>
+            <li><span>Sábados:</span> <strong>09:00 - 01:00 hs</strong></li>
+            <li><span>Domingos:</span> <strong>09:00 - 23:00 hs</strong></li>
+          </ul>
+        </div>
+
+        <div class="mapa-box">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.016887889512!2d-58.38415062343841!3d-34.60373885749729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacf4887dbb1%3A0x8f3c7e0f3f269a92!2sAv.%20Corrientes%201234%2C%20C1043AAS%20CABA!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de ubicación Ratatouille Bistro">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Música en vivo -->
+  <section class="musica" id="musica">
+    <div class="wrap">
+      <h2>Música en vivo</h2>
+      <p>Cenas acompañadas de buena música. Reservá tu lugar.</p>
+      <div class="fechas">
+        <div class="fecha"><b>Viernes 20:00 hs</b><h3>Jazz Trio</h3><span>Jazz &amp; Soul · Entrada libre</span></div>
+        <div class="fecha"><b>Sábado 21:00 hs</b><h3>Acoustic Sessions</h3><span>Pop &amp; Rock · Entrada libre</span></div>
+        <div class="fecha"><b>Domingo 13:00 hs</b><h3>Bossa Nova Lunch</h3><span>Bossa Nova · Entrada libre</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservas -->
+  <section class="reservas" id="reservas">
+    <div class="wrap">
+      <div>
+        <h2>Reservá tu mesa</h2>
+        <p>Elegí día, horario y cantidad de personas. Te confirmamos el lugar en el momento.</p>
+      </div>
+      <form id="f-reserva">
+        <div class="ancho">
+          <label for="r-nombre">Nombre</label>
+          <input id="r-nombre" required placeholder="Tu nombre">
+        </div>
+        <div>
+          <label for="r-fecha">Fecha</label>
+          <input id="r-fecha" type="date" required>
+        </div>
+        <div>
+          <label for="r-serv">Servicio</label>
+          <select id="r-serv">
+            <option>Entradas / Snack</option>
+            <option selected>Principales</option>
+            <option>Postres / Café</option>
+          </select>
+        </div>
+        <div>
+          <label for="r-hora">Hora</label>
+          <input id="r-hora" type="time" required>
+        </div>
+        <div>
+          <label for="r-pers">Personas</label>
+          <input id="r-pers" type="number" min="1" max="20" value="2" required>
+        </div>
+        <div class="ancho">
+          <button class="btn" type="submit">Confirmar reserva</button>
+          <p class="aviso" id="aviso-r" role="status"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Panel Repartidores -->
+  <section class="despacho" id="despacho">
+    <div class="wrap">
+      <h2>Panel de Despacho &amp; Repartidores</h2>
+      <p>Control de pedidos en tiempo real para cadetes y apps de delivery.</p>
+
+      <div class="panel-reparto">
+        <div class="filtros-reparto">
+          <span class="badge badge-alta">🔥 Prioridad Alta: Apps Delivery</span>
+          <span class="badge badge-normal">📋 Normal: Retiro / En Mesa</span>
+        </div>
+
+        <div class="comandas-grid" id="comandas-container">
+          <p class="vacio">No hay pedidos pendientes en cocina.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="img/logo.png" onerror="this.onerror=null; this.src='img/logo.png.png';" alt="Ratatouille Bistro &amp; Coffee" width="120">
+      <p>Merci. Reservá tu mesa y pedí delivery desde nuestra web. Te esperamos. Bon appétit.</p>
+    </div>
+    <div>
+      <h4>Dirección</h4>
+      Av. Corrientes 1234<br>Buenos Aires, Argentina
+    </div>
+    <div>
+      <h4>Horarios &amp; Contacto</h4>
+      Lun-Dom: 08:00 a 00:00 hs<br>+54 11 4321-8765<br>contacto@ratatouille.com.ar
+    </div>
+    <div>
+      <h4>Proyecto Cátedra</h4>
+      Ingeniería del Software - 2º año<br>Instituto N.º 182 «Sargento Cabral»
+    </div>
+    <small>© Menú Ágil del Bistro Ratatouille · Octubre 2026. Todos los derechos reservados.</small>
+  </div>
+</footer>
+
+<script>
+const $ = s => document.querySelector(s), money = n => "$" + n.toLocaleString("es-AR");
+const m = new URLSearchParams(location.search).get("mesa");
+
+if (m) {
+  $("#mesa").textContent = "¡Bienvenido a la mesa " + m.replace(/[^0-9A-Za-z]/g, "") + "! ¿Qué te preparamos hoy?";
+}
+
+// Pestañas
+document.querySelectorAll(".tabs button").forEach(b => {
+  b.onclick = () => {
+    document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-selected", x === b));
+    document.querySelectorAll("[role=tabpanel]").forEach(p => p.hidden = p.id !== "p-" + b.dataset.cat);
+  };
+});
+
+// Pedidos
+let pedido = [];
+let comandas = [];
+
+function actualizarPedido() {
+  const lista = $("#lista");
+  lista.innerHTML = "";
+  let total = 0, cantidadTotal = 0;
+
+  pedido.forEach((item, index) => {
+    total += item.precio * item.cantidad;
+    cantidadTotal += item.cantidad;
+
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <span>${item.nombre} x${item.cantidad}</span>
+      <span>${money(item.precio * item.cantidad)} 
+        <button type="button" onclick="eliminarItem(${index})" aria-label="Eliminar ${item.nombre}">&times;</button>
+      </span>
+    `;
+    lista.appendChild(li);
+  });
+
+  $("#total").textContent = money(total);
+  $("#cant").textContent = cantidadTotal;
+  $("#vacio").style.display = pedido.length === 0 ? "block" : "none";
+}
+
+function agregarItem(nombre, precio) {
+  const existe = pedido.find(item => item.nombre === nombre);
+  if (existe) {
+    existe.cantidad++;
+  } else {
+    pedido.push({ nombre, precio, cantidad: 1 });
+  }
+  actualizarPedido();
+}
+
+function eliminarItem(index) {
+  if (pedido[index].cantidad > 1) {
+    pedido[index].cantidad--;
+  } else {
+    pedido.splice(index, 1);
+  }
+  actualizarPedido();
+}
+
+document.querySelectorAll(".plato .btn").forEach(btn => {
+  btn.onclick = () => {
+    agregarItem(btn.dataset.nombre, parseInt(btn.dataset.precio, 10));
+  };
+});
+
+// Comandas
+function renderizarComandas() {
+  const container = $("#comandas-container");
+  container.innerHTML = "";
+
+  if (comandas.length === 0) {
+    container.innerHTML = '<p class="vacio">No hay pedidos pendientes en cocina.</p>';
+    return;
+  }
+
+  comandas.forEach((cmd, idx) => {
+    const card = document.createElement("div");
+    const esDelivery = cmd.tipo.includes("Delivery");
+    card.className = `comanda-card ${esDelivery ? 'prioridad-alta' : ''}`;
+    
+    let itemsHTML = cmd.items.map(i => `<li>• ${i.nombre} x${i.cantidad}</li>`).join("");
+
+    card.innerHTML = `
+      <div class="comanda-header">
+        <h4>#${cmd.id} - ${cmd.nombre}</h4>
+        <span class="badge ${esDelivery ? 'badge-alta' : 'badge-normal'}">
+          ${esDelivery ? '🔥 Delivery' : '📋 Local'}
+        </span>
+      </div>
+      <p><strong>Tipo:</strong> ${cmd.tipo}</p>
+      ${cmd.notas ? `<p><small><strong>Notas:</strong> ${cmd.notas}</small></p>` : ''}
+      <ul class="comanda-items">${itemsHTML}</ul>
+      <p><strong>Total:</strong> ${money(cmd.total)}</p>
+      <br>
+      <button class="estado-btn ${cmd.estado === 'Listo' ? 'listo' : ''}" onclick="cambiarEstado(${idx})">
+        ${cmd.estado === 'Listo' ? '✓ Listo para entregar (Click para archivar)' : '⏳ En preparación (Marcar Listo)'}
+      </button>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function cambiarEstado(index) {
+  if (comandas[index].estado === 'En preparación') {
+    comandas[index].estado = 'Listo';
+  } else {
+    comandas.splice(index, 1);
+  }
+  renderizarComandas();
+}
+
+// Formularios
+$("#f-pedido").onsubmit = e => {
+  e.preventDefault();
+  if (pedido.length === 0) {
+    $("#aviso").textContent = "Agregá al menos un plato a tu pedido.";
+    return;
+  }
+
+  const nuevoPedido = {
+    id: Math.floor(1000 + Math.random() * 9000),
+    nombre: $("#p-nombre").value,
+    tipo: $("#p-tipo").value,
+    notas: $("#p-notas").value,
+    items: [...pedido],
+    total: pedido.reduce((acc, i) => acc + (i.precio * i.cantidad), 0),
+    estado: 'En preparación'
+  };
+
+  comandas.unshift(nuevoPedido);
+  renderizarComandas();
+
+  $("#aviso").textContent = `¡Pedido #${nuevoPedido.id} enviado a cocina!`;
+  pedido = [];
+  actualizarPedido();
+  e.target.reset();
+};
+
+$("#f-reserva").onsubmit = e => {
+  e.preventDefault();
+  $("#aviso-r").textContent = "¡Reserva recibida! Te enviamos la confirmación.";
+  e.target.reset();
+};
+</script>
+
+</body>
+</html>
